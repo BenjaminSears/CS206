@@ -18,5 +18,6 @@ for i in range(100):
     backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("Back_Leg")
     t.sleep(1/20)
 
-print(backLegSensorValues)
+
+np.save("data/backLegSensorValues.npy", backLegSensorValues)
 p.disconnect()
