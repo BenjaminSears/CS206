@@ -28,9 +28,9 @@ backLegPhaseOffset = 0
 frontLegAmplitude = np.pi/7
 frontLegFrequency = 7.9
 frontLegPhaseOffset = np.pi/2.8
-frontLegAngles = frontLegAmplitude + np.sin(np.linspace(-frontLegFrequency*np.pi+frontLegPhaseOffset,
+frontLegAngles = frontLegAmplitude * np.sin(np.linspace(-frontLegFrequency*np.pi+frontLegPhaseOffset,
                                                         frontLegFrequency*np.pi+frontLegPhaseOffset, num=loopRange))
-backLegAngles = backLegAmplitude + np.sin(np.linspace(-backLegFrequency*np.pi+backLegPhaseOffset,
+backLegAngles = backLegAmplitude * np.sin(np.linspace(-backLegFrequency*np.pi+backLegPhaseOffset,
                                                         backLegFrequency*np.pi+backLegPhaseOffset, num=loopRange))
 # np.save("data/targetAngles.npy", targetAngles)
 
