@@ -21,7 +21,7 @@ class SIMULATION:
         p.disconnect()
 
     def RUN(self):
-        for i in range(100):
+        for t in range(100):
             p.stepSimulation()
             #self.robot.SENSE()
             #
