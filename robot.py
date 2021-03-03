@@ -17,5 +17,6 @@ class ROBOT:
             self.sensors[linkName] = SENSOR(linkName)
 
     def Sense(self, timestep):
-        for sensor in self.sensors:
+        for sensor in self.sensors.values():
             sensor.GET_VALUE(timestep)
+
