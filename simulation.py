@@ -4,6 +4,8 @@ import pybullet_data
 import time as t
 from world import WORLD
 from robot import ROBOT
+import constants as c
+
 
 
 class SIMULATION:
@@ -12,8 +14,6 @@ class SIMULATION:
 
         self.world = WORLD()
         self.robot = ROBOT()
-        # self.physicsClient = p.connect(p.GUI)
-        # p.setAdditionalSearchPath(pybullet_data.getDataPath())
         p.setGravity(0,0,-9.8)
 
     def __del__(self):
@@ -21,13 +21,8 @@ class SIMULATION:
         p.disconnect()
 
     def RUN(self):
-        for step in range(100):
+        for step in range(c.loopRange):
             p.stepSimulation()
             self.robot.Sense(step)
-            #
-            # pyrosim.Set_Motor_For_Joint(bodyIndex=robot, jointName="Torso_Back_Leg", controlMode=p.POSITION_CONTROL,
-            #                             targetPosition=backLegAngles[i], maxForce=25)
-            #
-            # pyrosim.Set_Motor_For_Joint(bodyIndex=robot, jointName="Torso_Front_Leg", controlMode=p.POSITION_CONTROL,
-            #                             targetPosition=frontLegAngles[i], maxForce=25)
-            t.sleep(1.0 / 10.0)
+            self.robot.Act(step)
+            t.sleep(1.0 / 25.0)

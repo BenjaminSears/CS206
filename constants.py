@@ -3,6 +3,10 @@ import numpy as np
 loopRange = 1000
 backLegSensorValues = np.zeros(loopRange)
 frontLegSensorValues = np.zeros(loopRange)
+amplitude = np.pi/4.15
+frequency = 8.0
+phaseOffset = 0
+
 backLegAmplitude = np.pi/4.15
 backLegFrequency = 8.0
 backLegPhaseOffset = 0
