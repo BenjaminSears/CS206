@@ -24,5 +24,6 @@ class SIMULATION:
         for step in range(c.loopRange):
             p.stepSimulation()
             self.robot.Sense(step)
+            self.robot.Think()
             self.robot.Act(step)
             t.sleep(1.0 / 25.0)
