@@ -1,4 +1,5 @@
 import pyrosim.pyrosim as pyrosim
+import random
 length = 1
 width = 1
 height = 1
@@ -36,26 +37,10 @@ def Generate_Brain():
     pyrosim.Send_Motor_Neuron(name=3, jointName="Torso_Back_Leg")
     pyrosim.Send_Motor_Neuron(name=4, jointName="Torso_Front_Leg")
 
-    # Test 1
-    # pyrosim.Send_Synapse(sourceNeuronName=0, targetNeuronName=3, weight=1.0)
-    # pyrosim.Send_Synapse(sourceNeuronName=1, targetNeuronName=3, weight=1.0)
-    # pyrosim.Send_Synapse(sourceNeuronName=0, targetNeuronName=4, weight=1.0)
-    # pyrosim.Send_Synapse(sourceNeuronName=1, targetNeuronName=4, weight=1.0)
-
-    # Test 2
-    # pyrosim.Send_Synapse(sourceNeuronName=0, targetNeuronName=3, weight=1.0)
-    # pyrosim.Send_Synapse(sourceNeuronName=1, targetNeuronName=3, weight=.2)
-    # pyrosim.Send_Synapse(sourceNeuronName=0, targetNeuronName=4, weight=.2)
-    # pyrosim.Send_Synapse(sourceNeuronName=1, targetNeuronName=4, weight=1.0)
-
-    # Test 3
-    pyrosim.Send_Synapse(sourceNeuronName=0, targetNeuronName=3, weight=.2)
-    pyrosim.Send_Synapse(sourceNeuronName=1, targetNeuronName=3, weight=1.0)
-    pyrosim.Send_Synapse(sourceNeuronName=0, targetNeuronName=4, weight=.2)
-    pyrosim.Send_Synapse(sourceNeuronName=1, targetNeuronName=4, weight=1.0)
-
-
-
+    for sensorNeuron in range(0, 3, 1):
+        for motorNeuron in range(3, 5, 1):
+            weight = random.uniform(-1, 1)
+            pyrosim.Send_Synapse(sourceNeuronName=sensorNeuron, targetNeuronName=motorNeuron, weight=weight)
     pyrosim.End()
 
 

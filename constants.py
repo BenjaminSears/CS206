@@ -1,6 +1,6 @@
 import numpy as np
 
-loopRange = 1000
+loopRange = 300
 backLegSensorValues = np.zeros(loopRange)
 frontLegSensorValues = np.zeros(loopRange)
 amplitude = np.pi/4.15
