@@ -1,4 +1,4 @@
-from Projects.hillclimber import *
+from hillclimber import *
 
 hc = HILL_CLIMBER()
 hc.Evolve()

@@ -1,4 +1,4 @@
-from Projects.solution import *
+from solution import *
 
 
 class HILL_CLIMBER:
