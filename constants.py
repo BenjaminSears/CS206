@@ -1,6 +1,6 @@
 import numpy as np
 
-loopRange = 300
+loopRange = 500
 backLegSensorValues = np.zeros(loopRange)
 frontLegSensorValues = np.zeros(loopRange)
 amplitude = np.pi/4.15
@@ -14,3 +14,5 @@ backLegPhaseOffset = 0
 frontLegAmplitude = np.pi/7
 frontLegFrequency = 7.9
 frontLegPhaseOffset = np.pi/2.8
+
+numberOfGenerations = 15

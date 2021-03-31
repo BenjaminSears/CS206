@@ -10,7 +10,13 @@ import constants as c
 
 class SIMULATION:
 
-    def __init__(self):
+    def __init__(self, directOrGUI):
+        if directOrGUI == "DIRECT":
+            self.physicsClient = p.connect(p.DIRECT)
+        elif directOrGUI == "GUI":
+            self.physicsClient = p.connect(p.GUI)
+        else:
+            raise Exception("Invalid directOrGUI value", directOrGUI)
 
         self.world = WORLD()
         self.robot = ROBOT()
