@@ -4,10 +4,10 @@
     <neuron name = "2" type = "sensor" linkName = "Front_Leg" />
     <neuron name = "3" type = "motor"  jointName = "Torso_Back_Leg" />
     <neuron name = "4" type = "motor"  jointName = "Torso_Front_Leg" />
-    <synapse sourceNeuronName = "0" targetNeuronName = "3" weight = "0.5145435714176525" />
-    <synapse sourceNeuronName = "0" targetNeuronName = "4" weight = "0.8686634173857024" />
-    <synapse sourceNeuronName = "1" targetNeuronName = "3" weight = "0.029832538688401522" />
-    <synapse sourceNeuronName = "1" targetNeuronName = "4" weight = "0.944369249307957" />
-    <synapse sourceNeuronName = "2" targetNeuronName = "3" weight = "0.43884461736444114" />
-    <synapse sourceNeuronName = "2" targetNeuronName = "4" weight = "0.10556719613807863" />
+    <synapse sourceNeuronName = "0" targetNeuronName = "3" weight = "-0.002450856115322919" />
+    <synapse sourceNeuronName = "0" targetNeuronName = "4" weight = "0.07909658860620272" />
+    <synapse sourceNeuronName = "1" targetNeuronName = "3" weight = "0.30510686619298055" />
+    <synapse sourceNeuronName = "1" targetNeuronName = "4" weight = "-0.9783964840322148" />
+    <synapse sourceNeuronName = "2" targetNeuronName = "3" weight = "0.7632891478080168" />
+    <synapse sourceNeuronName = "2" targetNeuronName = "4" weight = "-0.21108767537136708" />
 </neuralNetwork>

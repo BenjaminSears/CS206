@@ -9,16 +9,17 @@ height = 1
 
 class SOLUTION:
     
-    def __init__(self):
+    def __init__(self, inputID):
         self.weights = np.random.rand(3,2)
         self.weights = self.weights * 2 - 1
         self.fitness = 0
+        self.myID = inputID
 
     def Evaluate(self, directOrGUI):
         self.Create_World()
         self.Create_Body()
         self.Create_Brain()
-        os.system('python3 simulate.py ' + directOrGUI)
+        os.system("start /B python3 simulate.py " + directOrGUI)
         f = open("data/fitness.txt", "r")
         self.fitness = float(f.readline())
         f.close()
@@ -63,3 +64,6 @@ class SOLUTION:
         randRow = random.randint(0, 2)
         randColumn = random.randint(0, 1)
         self.weights[randRow][randColumn] = random.random() * 2 - 1
+
+    def Set_ID(self):
+        self.myID+=1
