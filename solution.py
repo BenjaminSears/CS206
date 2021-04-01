@@ -2,6 +2,7 @@ import random
 import numpy as np
 import pyrosim.pyrosim as pyrosim
 import os
+import time
 
 length = 1
 width = 1
@@ -19,8 +20,10 @@ class SOLUTION:
         self.Create_World()
         self.Create_Body()
         self.Create_Brain()
-        os.system("start /B python3 simulate.py " + directOrGUI)
-        f = open("data/fitness.txt", "r")
+        os.system("start /B python3 simulate.py " + directOrGUI + " " + str(self.myID))
+        while not os.path.exists("data/fitness"+str(self.myID)+".txt"):
+            time.sleep(0.01)
+        f = open("data/fitness"+str(self.myID)+".txt", "r")
         self.fitness = float(f.readline())
         f.close()
 

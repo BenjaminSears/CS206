@@ -10,8 +10,8 @@ import constants as c
 
 class SIMULATION:
 
-    def __init__(self, directOrGUI):
-        self.directOrGUI = directOrGUI;
+    def __init__(self, directOrGUI, solutionID):
+        self.directOrGUI = directOrGUI
         if self.directOrGUI == "DIRECT":
             self.physicsClient = p.connect(p.DIRECT)
         elif self.directOrGUI == "GUI":
@@ -20,7 +20,7 @@ class SIMULATION:
             raise Exception("Invalid directOrGUI value", directOrGUI)
 
         self.world = WORLD()
-        self.robot = ROBOT()
+        self.robot = ROBOT(solutionID)
         p.setGravity(0,0,-9.8)
 
     def __del__(self):
