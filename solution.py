@@ -21,11 +21,26 @@ class SOLUTION:
         self.Create_Body()
         self.Create_Brain()
         os.system("start /B python3 simulate.py " + directOrGUI + " " + str(self.myID))
-        while not os.path.exists("data/fitness"+str(self.myID)+".txt"):
+        while not os.path.exists("fitness"+str(self.myID)+".txt"):
             time.sleep(0.01)
-        f = open("data/fitness"+str(self.myID)+".txt", "r")
+        f = open("fitness"+str(self.myID)+".txt", "r")
         self.fitness = float(f.readline())
         f.close()
+
+    def Start_Simulation(self, directOrGUI):
+        self.Create_World()
+        self.Create_Body()
+        self.Create_Brain()
+        os.system("start /B python3 simulate.py " + directOrGUI + " " + str(self.myID))
+
+    def Wait_For_Simulation_To_End(self):
+        while not os.path.exists("fitness"+str(self.myID)+".txt"):
+            time.sleep(0.01)
+        f = open("fitness"+str(self.myID)+".txt", "r")
+        self.fitness = float(f.readline())
+        f.close()
+        os.system("del fitness"+str(self.myID)+".txt")
+        #print(self.fitness)
 
     def Create_World(self):
         pyrosim.Start_SDF("world.sdf")

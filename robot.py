@@ -17,7 +17,7 @@ class ROBOT:
         self.nn = NEURAL_NETWORK("brain"+solutionID+".nndf")
         self.Prepare_To_Sense()
         self.Prepare_To_Act()
-        os.system("del brain"+solutionID+".nndf")
+        os.system("del brain" + self.solutionID+ ".nndf")
 
     def Prepare_To_Sense(self):
         for linkName in pyrosim.linkNamesToIndices:
@@ -46,8 +46,8 @@ class ROBOT:
         stateOfLinkZero = p.getLinkState(self.robot,0)
         positionOfLinkZero = stateOfLinkZero[0]
         xCoordinateOfLinkZero = positionOfLinkZero[0]
-        f = open("data/tmp" + str(self.solutionID) + ".txt", "w")
+        f = open("tmp"+str(self.solutionID)+".txt", "w")
         f.write(str(xCoordinateOfLinkZero))
-        os.system("rename data/tmp"+str(self.solutionID)+".txt data/fitness"+str(self.solutionID)+".txt")
-        #f = open("data/fitness"+str(self.solutionID)+".txt", "w")
         f.close()
+        os.rename("tmp"+str(self.solutionID)+".txt", "fitness"+str(self.solutionID)+".txt")
+        #f = open("data/fitness"+str(self.solutionID)+".txt", "w")
