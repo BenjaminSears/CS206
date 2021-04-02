@@ -16,7 +16,7 @@ frontLegFrequency = 7.9
 frontLegPhaseOffset = np.pi/2.8
 
 # Hill climber
-numberOfGenerations = 15
+numberOfGenerations = 2
 
 # Parallel Hill Climber
 populationSize = 2
