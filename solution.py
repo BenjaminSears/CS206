@@ -40,7 +40,6 @@ class SOLUTION:
         self.fitness = float(f.readline())
         f.close()
         os.system("del fitness"+str(self.myID)+".txt")
-        #print(self.fitness)
 
     def Create_World(self):
         pyrosim.Start_SDF("world.sdf")

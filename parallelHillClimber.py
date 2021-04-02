@@ -5,6 +5,8 @@ import copy
 
 class PARALLEL_HILL_CLIMBER:
     def __init__(self):
+        os.system("del brain*.nndf")
+        os.system("del fitness*.txt")
         self.nextAvailableID = 0
         self.parents = {}
         for idx in range(0, c.populationSize, 1):
@@ -14,29 +16,34 @@ class PARALLEL_HILL_CLIMBER:
 
     def Evolve(self):
         for solution in self.parents.values():
-            solution.Start_Simulation("GUI")
+            solution.Start_Simulation("DIRECT")
+        for solution in self.parents.values():
             solution.Wait_For_Simulation_To_End()
-        # for currentGeneration in range(c.numberOfGenerations):
-        #     self.Evolve_For_One_Generation()
+        for currentGeneration in range(c.numberOfGenerations):
+            self.Evolve_For_One_Generation()
 
     def Evolve_For_One_Generation(self):
         self.Spawn()
 
         self.Mutate()
 
-        self.child.Evaluate("DIRECT")
-
-        self.Print()
-
-        self.Select()
+        # self.child.Evaluate("DIRECT")
+        #
+        # self.Print()
+        #
+        # self.Select()
 
     def Spawn(self):
-        self.child = copy.deepcopy(self.parent)
-        self.child.Set_ID()
-        self.nextAvailableID+=1
+        self.children = {}
+        for idx in range(0, c.populationSize, 1):
+            addParent = copy.deepcopy(self.parents[idx])
+            self.children[idx] = addParent
+            self.children[idx].Set_ID()
+            self.nextAvailableID += 1
 
     def Mutate(self):
-        self.child.Mutate()
+        for child in self.children.values():
+            child.Mutate()
 
     def Select(self):
         if self.parent.fitness > self.child.fitness:
