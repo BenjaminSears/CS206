@@ -7,6 +7,7 @@ class PARALLEL_HILL_CLIMBER:
     def __init__(self):
         os.system("del brain*.nndf")
         os.system("del fitness*.txt")
+        os.system("del tmp*.txt")
         self.nextAvailableID = 0
         self.parents = {}
         for idx in range(0, c.populationSize, 1):
@@ -33,9 +34,9 @@ class PARALLEL_HILL_CLIMBER:
         self.children = {}
         for idx in range(0, c.populationSize, 1):
             addParent = copy.deepcopy(self.parents[idx])
-            self.children[idx] = addParent
-            self.children[idx].Set_ID()
+            addParent.Set_ID(self.nextAvailableID)
             self.nextAvailableID += 1
+            self.children[idx] = addParent
 
     def Mutate(self):
         for child in self.children.values():
@@ -51,11 +52,15 @@ class PARALLEL_HILL_CLIMBER:
         for key in self.parents.keys():
             print(self.parents[key].fitness, self.children[key].fitness)
         print()
-    def Show_Best(self):
-        # self.parent.Evaluate("GUI")
-        pass
 
-    def Evaluate(self,solutions):
+    def Show_Best(self):
+        lowestSolution = self.parents[0]
+        for idx in self.parents.keys():
+            if self.parents[idx].fitness < lowestSolution.fitness:
+                lowestSolution = self.parents[idx]
+        lowestSolution.Start_Simulation("GUI")
+
+    def Evaluate(self, solutions):
         for solution in solutions.values():
             solution.Start_Simulation("DIRECT")
         for solution in solutions.values():

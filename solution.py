@@ -39,7 +39,7 @@ class SOLUTION:
         f = open("fitness"+str(self.myID)+".txt", "r")
         self.fitness = float(f.readline())
         f.close()
-        os.system("del fitness"+str(self.myID)+".txt")
+        os.remove("fitness"+str(self.myID)+".txt")
 
     def Create_World(self):
         pyrosim.Start_SDF("world.sdf")
@@ -82,5 +82,5 @@ class SOLUTION:
         randColumn = random.randint(0, 1)
         self.weights[randRow][randColumn] = random.random() * 2 - 1
 
-    def Set_ID(self):
-        self.myID+=1
+    def Set_ID(self, inputID):
+        self.myID = inputID

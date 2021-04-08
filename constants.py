@@ -1,6 +1,6 @@
 import numpy as np
 
-loopRange = 500
+loopRange = 1500
 backLegSensorValues = np.zeros(loopRange)
 frontLegSensorValues = np.zeros(loopRange)
 amplitude = np.pi/4.15
@@ -16,7 +16,7 @@ frontLegFrequency = 7.9
 frontLegPhaseOffset = np.pi/2.8
 
 # Hill climber
-numberOfGenerations = 2
+numberOfGenerations = 10
 
 # Parallel Hill Climber
-populationSize = 2
+populationSize = 10

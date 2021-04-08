@@ -15,9 +15,9 @@ class ROBOT:
         self.robot = p.loadURDF("body.urdf")
         pyrosim.Prepare_To_Simulate("body.urdf")
         self.nn = NEURAL_NETWORK("brain"+solutionID+".nndf")
+        os.remove("brain" + self.solutionID+ ".nndf")
         self.Prepare_To_Sense()
         self.Prepare_To_Act()
-        os.system("del brain" + self.solutionID+ ".nndf")
 
     def Prepare_To_Sense(self):
         for linkName in pyrosim.linkNamesToIndices:
@@ -50,4 +50,3 @@ class ROBOT:
         f.write(str(xCoordinateOfLinkZero))
         f.close()
         os.rename("tmp"+str(self.solutionID)+".txt", "fitness"+str(self.solutionID)+".txt")
-        #f = open("data/fitness"+str(self.solutionID)+".txt", "w")
