@@ -20,3 +20,7 @@ numberOfGenerations = 10
 
 # Parallel Hill Climber
 populationSize = 10
+
+# Quadraped
+numSensorNeurons = 3
+numMotorNeurons = 2
