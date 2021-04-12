@@ -16,10 +16,10 @@ frontLegFrequency = 7.9
 frontLegPhaseOffset = np.pi/2.8
 
 # Hill climber
-numberOfGenerations = 1
+numberOfGenerations = 4
 
 # Parallel Hill Climber
-populationSize = 1
+populationSize = 10
 
 # Quadraped
 numSensorNeurons = 9
