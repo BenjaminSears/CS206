@@ -22,8 +22,8 @@ numberOfGenerations = 1
 populationSize = 1
 
 # Quadraped
-numSensorNeurons = 7
-numMotorNeurons = 6
+numSensorNeurons = 9
+numMotorNeurons = 8
 legLength = 0.2
 legWidth = 1.0
 legHeight = 0.2

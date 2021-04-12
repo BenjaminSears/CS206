@@ -73,9 +73,17 @@ class SOLUTION:
         pyrosim.Send_Cube(name="Front_Lower_Leg", pos=[0.0, 0.0, -0.5], size=[0.2, 0.2, 1.0])
 
         pyrosim.Send_Joint(name="Back_Leg_Lower_Leg", parent="Back_Leg", child="Back_Lower_Leg",
-                           type="revolute",
-                           position="0.0, -1.0, 0.0", jointAxis="1 0 0")
+                           type="revolute", position="0.0, -1.0, 0.0", jointAxis="1 0 0")
         pyrosim.Send_Cube(name="Back_Lower_Leg", pos=[0.0, 0.0, -0.5], size=[0.2, 0.2, 1.0])
+
+        pyrosim.Send_Joint(name="Left_Leg_Lower_Leg", parent="Left_Leg", child="Left_Lower_Leg", type="revolute",
+                           position="-1.0, 0 0.0, 0.0", jointAxis="0 1 0")
+        pyrosim.Send_Cube(name="Left_Lower_Leg", pos=[0.0, 0.0, -0.5], size=[0.2, 0.2, 1.0])
+
+        pyrosim.Send_Joint(name="Right_Leg_Lower_Leg", parent="Right_Leg", child="Right_Lower_Leg",
+                           type="revolute",
+                           position="1.0, 0.0, 0.0", jointAxis="0 1 0")
+        pyrosim.Send_Cube(name="Right_Lower_Leg", pos=[0.0, 0.0, -0.5], size=[0.2, 0.2, 1.0])
 
         pyrosim.End()
 
@@ -101,11 +109,11 @@ class SOLUTION:
         pyrosim.Send_Sensor_Neuron(name=11, linkName="Back_Lower_Leg")
         pyrosim.Send_Motor_Neuron(name=12, jointName="Back_Leg_Lower_Leg")
 
-        # pyrosim.Send_Sensor_Neuron(name=13, linkName="Left_Lower_Leg")
-        # pyrosim.Send_Motor_Neuron(name=14, jointName="Left_Leg_Lower_Leg")
-        #
-        # pyrosim.Send_Sensor_Neuron(name=15, linkName="Right_Lower_Leg")
-        # pyrosim.Send_Motor_Neuron(name=16, jointName="Right_Leg_Lower_Leg")
+        pyrosim.Send_Sensor_Neuron(name=13, linkName="Left_Lower_Leg")
+        pyrosim.Send_Motor_Neuron(name=14, jointName="Left_Leg_Lower_Leg")
+
+        pyrosim.Send_Sensor_Neuron(name=15, linkName="Right_Lower_Leg")
+        pyrosim.Send_Motor_Neuron(name=16, jointName="Right_Leg_Lower_Leg")
 
         for currentRow in range(0,c.numSensorNeurons,1):
             for currentColumn in range(0,c.numMotorNeurons,1):
