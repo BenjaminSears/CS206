@@ -19,7 +19,7 @@ frontLegPhaseOffset = np.pi/2.8
 numberOfGenerations = 5
 
 # Parallel Hill Climber
-populationSize = 10
+populationSize = 5
 
 # Quadraped
 numSensorNeurons = 9
@@ -31,4 +31,4 @@ legHeight = 0.2
 # Long legs
 minLegLength = 0.1
 maxLegLength = 3.4
-motorJointRange = 1.0
+motorJointRange = 0.4

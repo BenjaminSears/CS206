@@ -123,9 +123,10 @@ class SOLUTION:
         pyrosim.End()
 
     def Mutate(self):
-        randRow = random.randint(0, c.numSensorNeurons-1)
-        randColumn = random.randint(0, c.numMotorNeurons-1)
-        self.weights[randRow][randColumn] = random.random() * 2 - 1
+        for _ in range(3):
+            randRow = random.randint(0, c.numSensorNeurons-1)
+            randColumn = random.randint(0, c.numMotorNeurons-1)
+            self.weights[randRow][randColumn] = random.random() * 2 - 1
         self.legLength = random.uniform(c.minLegLength, c.maxLegLength)
 
     def Set_ID(self, inputID):
