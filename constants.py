@@ -16,10 +16,10 @@ frontLegFrequency = 7.9
 frontLegPhaseOffset = np.pi/2.8
 
 # Hill climber
-numberOfGenerations = 4
+numberOfGenerations = 8
 
 # Parallel Hill Climber
-populationSize = 10
+populationSize = 8
 
 # Quadraped
 numSensorNeurons = 9
@@ -27,3 +27,5 @@ numMotorNeurons = 8
 legLength = 0.2
 legWidth = 1.0
 legHeight = 0.2
+
+motorJointRange = 0.3

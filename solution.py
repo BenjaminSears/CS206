@@ -44,7 +44,16 @@ class SOLUTION:
 
     def Create_World(self):
         pyrosim.Start_SDF("world.sdf")
+        x = -3
+        y = -4
+        z = 1
         # pyrosim.Send_Cube(name="Box", pos=[-3,3,.5], size=[length, width, height])
+        for i in range(9):
+            pyrosim.Send_Cube(name=f'Box_{i}', pos=[x,y,z], size=[1,1,2])
+            y += 4
+            if y == 8:
+                x+= -3
+                y = -4
         pyrosim.End()
 
     def Create_Body(self):
