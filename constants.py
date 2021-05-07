@@ -20,3 +20,8 @@ numberOfGenerations = 10
 
 # Parallel Hill Climber
 populationSize = 10
+
+# A/B Testing
+data = np.zeros((populationSize, numberOfGenerations))
+numSensorNeurons = 3
+numMotorNeurons = 2

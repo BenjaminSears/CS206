@@ -1,5 +1,6 @@
 from solution import *
 import constants as c
+import numpy as np
 import copy
 
 
@@ -59,6 +60,7 @@ class PARALLEL_HILL_CLIMBER:
             if self.parents[idx].fitness < lowestSolution.fitness:
                 lowestSolution = self.parents[idx]
         lowestSolution.Start_Simulation("GUI")
+
 
     def Evaluate(self, solutions):
         for solution in solutions.values():
