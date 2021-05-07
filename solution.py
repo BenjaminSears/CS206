@@ -41,11 +41,12 @@ class SOLUTION:
             time.sleep(0.01)
         f = open("fitness"+str(self.myID)+".txt", "r")
         self.fitness = float(f.readline())
-        c.data[self.currentPop][self.currentGen] = self.fitness
-        self.currentGen+=1
-        if self.currentGen == c.numberOfGenerations-1:
-            self.currentPop+=1
-            self.currentGen = 0
+        if c.currentPop < c.populationSize:
+            c.data[c.currentPop][c.currentGen] = self.fitness
+            c.currentGen += 1
+            if c.currentGen == c.populationSize:
+                c.currentPop +=1
+                c.currentGen = 0
         f.close()
         os.remove("fitness"+str(self.myID)+".txt")
 
