@@ -16,10 +16,10 @@ frontLegFrequency = 7.9
 frontLegPhaseOffset = np.pi/2.8
 
 # Hill climber
-numberOfGenerations = 5
+numberOfGenerations = 8
 
 # Parallel Hill Climber
-populationSize = 5
+populationSize = 8
 
 # A/B Testing
 data = np.zeros((populationSize, numberOfGenerations))
